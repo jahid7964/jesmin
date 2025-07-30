@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For You, Jesmin Aktar Mim</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fceabb, #f8b500);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 400px;
+    }
+    h1 {
+      color: #e91e63;
+      font-size: 2em;
+    }
+    p {
+      font-size: 1.2em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .heart {
+      font-size: 3em;
+      color: red;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    .btn {
+      margin: 10px 5px;
+      background-color: #e91e63;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Dear Jesmin Aktar Mim 💖</h1>
+    <p>তোমার মতো একটা মাইয়া যদি পাইতাম...<br><br>
+    <strong>খোদার কসম! কিসের প্রেম-ট্রেম 😍<br>সোজা গিয়া বিয়া কইরা ফালাইতাম!</strong></p>
+    <div class="heart">❤️</div>
+    <button class="btn" onclick="alert('Thank you! তুমি আমার জীবনের প্রিন্সেস 😍')">Yes</button>
+    <button class="btn" onclick="alert('তাহলে তোমার ফ্রেন্ডদের একজনের নাম দাও 😜')">No</button>
+  </div>
+</body>
+</html>
