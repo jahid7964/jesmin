@@ -1,66 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>For You, jafrin Islam</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #fceabb, #f8b500);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-      text-align: center;
-      max-width: 400px;
-    }
-    h1 {
-      color: #e91e63;
-      font-size: 2em;
-    }
-    p {
-      font-size: 1.2em;
-      color: #333;
-      margin-bottom: 20px;
-    }
-    .heart {
-      font-size: 3em;
-      color: red;
-      animation: pulse 1s infinite;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
-    .btn {
-      margin: 10px 5px;
-      background-color: #e91e63;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 1em;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tisha — For You</title>
+<style>
+body{margin:0;background:#0b1020;color:#fff;font-family:sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
+.card{background:#111423;padding:20px;border-radius:14px;max-width:600px;width:100%;text-align:center}
+.btn{background:#ff4d6d;border:none;padding:12px 18px;color:#fff;font-size:18px;border-radius:10px;cursor:pointer}
+#overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;padding:20px}
+.sheet{background:#111423;padding:20px;border-radius:14px;max-width:700px;width:100%;position:relative}
+#flowerShow img{width:100%;border-radius:12px}
+.petal{position:fixed;top:-40px;font-size:24px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(120vh);opacity:0}}
+</style>
 </head>
 <body>
-  <div class="card">
-    <h1>Dear sister 🤭 jafrin Islam 💖</h1>
-    <p>..তোর ভাইটা একা বসে আকাশের তারা গোনে..<br><br>
-    <strong> আর তুই তোর ফ্রেন্ডরে আমার থেকে লুকাইস!‎আমি প্রেম চাই না… শুধু কথা বলতে চাই…😍<br>যদি মন মিলে যায়, হয়তো ভবিষ্যতে ভাবিও হইতে পারে! 😉 ‎নাম্বারটা দে তো… বাকি দায়িত্ব তোর ভাইয়ের!!</strong></p>
-    <div class="heart">❤️</div>
-    <button class="btn" onclick="alert('Thank you! তুমি ‎ দুনিয়ার সেরা ছোট বোন 😍')">Yes</button>
-    <button class="btn" onclick="alert('তাহলে তুমি ডুবে মরে যাও 😜')">No</button>
-  </div>
+<div class="card">
+<h2>Tisha — For You</h2>
+<p>Click below</p>
+<button class="btn" id="openBtn">Tisha — For You</button>
+</div>
+
+<div id="overlay">
+<div class="sheet">
+<h2>Tisha, তুমি কি ?</h2>
+<p>Would you be mine? ❤️</p>
+<button class="btn" id="yesBtn">হ্যাঁ, আমি রাজি</button>
+
+<div id="flowerShow" style="display:none;margin-top:20px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));display:grid;gap:10px;">
+<img src="https://i.imgur.com/2RMqG6T.jpeg">
+<img src="https://i.imgur.com/5QFzj1d.jpeg">
+<img src="https://i.imgur.com/Vg8Axhp.jpeg">
+<img src="https://i.imgur.com/59nE0ln.jpeg">
+</div>
+</div>
+</div>
+
+<script>
+openBtn.onclick=()=>{overlay.style.display='flex';}
+yesBtn.onclick=()=>{flowerShow.style.display='grid';spawnMany();}
+
+function spawnRose(){
+ let r=document.createElement('div');
+ r.textContent='🌹';
+ r.className='petal';
+ r.style.left=Math.random()*100+'%';
+ r.style.animationDuration=(5+Math.random()*5)+'s';
+ document.body.appendChild(r);
+ setTimeout(()=>r.remove(),10000);
+}
+function spawnMany(){for(let i=0;i<20;i++)setTimeout(spawnRose,i*300);}
+setInterval(spawnRose,1200);
+</script>
 </body>
 </html>
